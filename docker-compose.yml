@@ -1,0 +1,40 @@
+
+services:
+    postgres:
+        image: postgres:15-alpine
+        environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: mydb
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+
+    server:
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        ports:
+            - "4000:4000"
+            - "5555:5555"
+        environment:
+            DATABASE_URL: postgres://user:password@postgres:5432/mydb
+        depends_on:
+            - postgres
+        volumes:
+            - ./server/src:/app/src
+    client:
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        depends_on:
+            - server
+        volumes:
+            - ./client:/app
+            - /app/node_modules
+
+volumes:
+    pgdata:

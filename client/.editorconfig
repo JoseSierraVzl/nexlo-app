@@ -1,0 +1,39 @@
+# EditorConfig ayuda a mantener estilos de código consistentes entre distintos editores
+# Más info: https://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.yml]
+indent_size = 4
+
+[*.json]
+indent_size = 4
+
+[*.css]
+indent_size = 4
+
+[*.scss]
+indent_size = 4
+
+[*.ts]
+indent_size = 4
+
+[*.tsx]
+indent_size = 4
+
+[*.js]
+indent_size = 4
+
+[*.jsx]
+indent_size = 4
