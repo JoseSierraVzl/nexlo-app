@@ -22,3 +22,5 @@ export default function Counter() {
         </div>
     );
 }
+
+// this comment is here to test git changes
