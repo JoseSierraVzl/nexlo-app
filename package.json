@@ -1,0 +1,21 @@
+{
+    "scripts": {
+        "prepare": "husky install"
+    },
+    "lint-staged": {
+        "client/**/*.{ts,tsx,js,jsx}": [
+            "eslint --fix",
+            "git add"
+        ],
+        "server/**/*.{ts,tsx,js,jsx}": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^20.1.0",
+        "@commitlint/config-conventional": "^20.0.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.7"
+    }
+}
