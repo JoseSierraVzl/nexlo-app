@@ -9,10 +9,16 @@ export default function Counter() {
     const dispatch = useDispatch<AppDispatch>();
 
     return (
-        <div className="flex gap-2 items-center">
-            <button onClick={() => dispatch(decrement())}>-</button>
-            <span>{count}</span>
-            <button onClick={() => dispatch(increment())}>+</button>
+        <div className="flex items-center justify-center min-h-screen">
+            <div className="flex gap-4 items-center">
+                <button className="btn" onClick={() => dispatch(decrement())}>
+                    -
+                </button>
+                <span>{count}</span>
+                <button className="btn" onClick={() => dispatch(increment())}>
+                    +
+                </button>
+            </div>
         </div>
     );
 }
