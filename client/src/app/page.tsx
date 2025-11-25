@@ -22,4 +22,4 @@ export default function Counter() {
     );
 }
 
-// this comment is here to test git changes
+// this comment is here to test git changes 1 2
